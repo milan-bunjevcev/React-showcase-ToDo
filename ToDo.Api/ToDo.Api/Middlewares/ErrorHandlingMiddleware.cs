@@ -20,6 +20,7 @@ public class ErrorHandlingMiddleware(RequestDelegate next)
             {
                 ArgumentNullException => StatusCodes.Status400BadRequest,
                 AuthenticationException => StatusCodes.Status401Unauthorized,
+                EntityNotFoundException => StatusCodes.Status404NotFound,
                 _ => StatusCodes.Status500InternalServerError,
             });
 

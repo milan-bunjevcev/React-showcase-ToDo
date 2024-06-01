@@ -16,6 +16,8 @@ public static class ServiceCollectionExtensions
         IConfiguration configuration)
     {
         serviceCollection
+            .AddScoped<IToDoTaskRepository, ToDoTaskRepository>()
+            .AddScoped<IToDoTaskService, ToDoTaskService>()
             .AddScoped<IUserAccessor, UserAccessor>()
             .AddScoped<IUserRepository, UserRepository>()
             .AddScoped<IUserService, UserService>();
