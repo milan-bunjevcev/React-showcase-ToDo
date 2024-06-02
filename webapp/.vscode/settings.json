@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

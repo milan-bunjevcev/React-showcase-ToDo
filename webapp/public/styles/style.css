@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+.background-gradient {
+    background: #0567A6;
+    background: -webkit-linear-gradient(
+            to right,
+            rgba(5, 103, 166, 1),
+            rgba(5, 160, 191, 1)
+    );
+    background: linear-gradient(
+            to right,
+            rgba(5, 103, 166, 1),
+            rgba(5, 160, 191, 1)
+    );
+}
+
+.card-gradient {
+    background-color: #FFFFFF !important;
+    border-radius: 2em;
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(246, 240, 240, 0.05);
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+
+.logo {
+    width: 60px;
+}
+
+.action-icon {
+    height: 20px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.btn-add {
+    --mdb-btn-bg: #0567A6 !important;
+    --mdb-btn-color: #F6F0F0 !important;
+    --mdb-btn-box-shadow: 0 4px 9px -4px #0567A6 !important;
+    --mdb-btn-hover-bg: #05A0BF !important;
+    --mdb-btn-hover-color: #F6F0F0 !important;
+    --mdb-btn-focus-bg: #05A0BF !important;
+    --mdb-btn-focus-color: #F6F0F0 !important;
+    --mdb-btn-active-bg: #05A0BF !important;
+    --mdb-btn-active-color: #F6F0F0 !important;
+}
