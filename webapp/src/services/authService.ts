@@ -1,7 +1,8 @@
+import { BASE_API_URL } from "../Constants";
 import { AccessTokenResponse } from "../types/AccessTokenResponse";
 import { LoginRequest } from "../types/LoginRequest";
 
-const URL: string = "http://localhost:5111/api/auth";
+const URL: string = `${BASE_API_URL}/auth`;
 const DEFAULT_HEADERS: Record<string, string> = {
   "Content-Type": "application/json",
 };

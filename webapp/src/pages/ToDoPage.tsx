@@ -29,20 +29,26 @@ export const ToDoPage = () => {
     });
   };
 
+  const changeTaskStatus = async (task: ToDoTask) => {
+    await editTask(task.id, {
+      name: task.name,
+      isCompleted: !task.isCompleted,
+    });
+    getAllTasksFromBackend();
+  };
+
+  const removeTask = async (task: ToDoTask) => {
+    await deleteTask(task.id);
+    getAllTasksFromBackend();
+  };
+
   const rowsToShow = listOfTasks.map((task) => (
     <TableRow
       key={task.id}
       taskName={task.name}
       isCompleted={task.isCompleted}
-      changeTaskStatus={() => {
-        editTask(task.id, {
-          name: task.name,
-          isCompleted: !task.isCompleted,
-        }).then(() => getAllTasksFromBackend());
-      }}
-      deleteTask={() => {
-        deleteTask(task.id).then(() => getAllTasksFromBackend());
-      }}
+      changeTaskStatus={() => changeTaskStatus(task)}
+      deleteTask={() => removeTask(task)}
     />
   ));
 

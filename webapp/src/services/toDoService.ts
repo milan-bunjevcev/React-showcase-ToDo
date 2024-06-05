@@ -1,11 +1,12 @@
+import { ACCESS_TOKEN_STORAGE_KEY, BASE_API_URL } from "../Constants";
 import { CreateToDoTask } from "../types/CreateToDoTask";
 import { EditToDoTask } from "../types/EditToDoTask";
 import { ToDoTask } from "../types/ToDoTask";
 
-const URL: string = "http://localhost:5111/api/tasks";
+const URL: string = `${BASE_API_URL}/tasks`;
 const getDefaultHeaders = (): Record<string, string> => ({
   "Content-Type": "application/json",
-  Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY)}`,
 });
 
 export const getAllTasks = async (): Promise<ToDoTask[]> => {

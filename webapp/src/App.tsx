@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { ToDoPage } from "./pages/ToDoPage";
 import { login } from "./services/authService";
+import { ACCESS_TOKEN_STORAGE_KEY } from "./Constants";
 
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem("accessToken") !== null
+    localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY) !== null
   );
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginUser = () => {
-    login({ username, password })
-      .then((tokenResponse) => {
-        localStorage.setItem("accessToken", tokenResponse.accessToken);
-        setIsLoggedIn(true);
-      })
-      .catch((error) => alert(error));
+  const loginUser = async () => {
+    try {
+      const tokenResponse = await login({ username, password });
+      localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY, tokenResponse.accessToken);
+      setIsLoggedIn(true);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   if (isLoggedIn) return <ToDoPage />;
